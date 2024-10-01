@@ -21,9 +21,11 @@ const Header = () => {
           <Link to="/" className="hover:text-blueDark">Home</Link>
           <Link to="/about" className="hover:text-blueDark">About</Link>
           <Link to="/services" className="hover:text-blueDark">Services</Link>
-          <Link to="/news" className="hover:text-blueDark">News</Link>
+          <Link to="/blog" className="hover:text-blueDark">Blogs</Link>
+          <Link to="/resources" className="hover:text-blueDark">Resources</Link>
           <Link to="/maritime" className="hover:text-blueDark">Careers</Link>
           <Link to="/contact" className="hover:text-blueDark">Contact</Link>
+          <Link to="/technology" className="hover:text-blueDark">Technology</Link>
         </nav>
         <div className="hidden md:flex space-x-4">
           <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">

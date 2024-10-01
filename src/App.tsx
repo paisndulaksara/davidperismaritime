@@ -1,4 +1,3 @@
- // src/App.js 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -6,19 +5,32 @@ import Header from './components/Header/Header';
 import OurService from './pages/OurServices/OurServices';
 import Home from './pages/Home/Home';
 import Maritime from './pages/MaritimeAgencies/Maritime';
+import Contact from './pages/Contactus/Contact';
+import Resourses from './pages/Resourses/Resourses';
+import Blog from './pages/Blog/Blog';
+import Blogpost from './components/Blogpost/Blogpost';
+import Technology from './pages/Technology/Technology';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<OurService />} />
-        <Route path="/maritime" element={<Maritime />} />
-        {/* Add more routes as needed */}
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="flex flex-col min-h-screen"> {/* Full-height flexbox container */}
+      <Router>
+        <Header />
+        <main className="flex-grow"> {/* This makes sure the content grows and pushes footer down */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<OurService />} />
+            <Route path="/maritime" element={<Maritime />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resources" element={<Resourses />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<Blogpost />} />
+            <Route path="/technology" element={<Technology />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
