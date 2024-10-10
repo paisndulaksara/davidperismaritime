@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="text-primary p-4 relative z-30">
+    <header className="text-primary p-4 relative z-30 bg-blueLight bg-opacity-55">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-2xl font-bold">DP Maritime</div>
