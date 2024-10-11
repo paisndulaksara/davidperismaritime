@@ -1,4 +1,3 @@
- // src/components/Header/Header.tsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
@@ -12,14 +11,13 @@ const Header = () => {
   };
 
   return (
-    <header className="text-primary p-4 relative z-30 bg-blueLight bg-opacity-55">
+    <header className="sticky top-0 text-primary p-4 bg-blueLight bg-opacity-55 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-2xl font-bold">DP Maritime</div>
         </div>
         <nav className="hidden md:flex flex-grow justify-center items-center space-x-4">
           <Link to="/" className="hover:text-blueDark">Home</Link>
-          <Link to="/about" className="hover:text-blueDark">About</Link>
           <Link to="/services" className="hover:text-blueDark">Services</Link>
           <Link to="/blog" className="hover:text-blueDark">Blogs</Link>
           <Link to="/resources" className="hover:text-blueDark">Resources</Link>

@@ -8,7 +8,7 @@ const Aboutus = () => {
     <div>
       <section className="xl:container p-8">
         <h2 className="text-center font-abril text-5xl text-blueLight pb-5">
-          About us
+         Our Services
         </h2>
         <p className="text-grayDark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Non neque
