@@ -3,7 +3,7 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import logo from '../../../images/logo.png'
+import logo from '../../../images/Maritime-Home-(1).jpg'
 
 const ClientSlider = () => {
   const settings = {

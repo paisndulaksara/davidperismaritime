@@ -39,7 +39,7 @@ const Aboutus = () => {
       </div>
     </div>
 
-     <div className="xl:container">
+     <div>
          {/* Ship Agency Section */}
       <section
         className="relative bg-cover bg-no-repeat bg-center "
@@ -55,8 +55,11 @@ const Aboutus = () => {
                   className="w-12 h-12 mr-4"
                 />
                 <h3 className="text-4xl font-bold font-abril text-white">
-                  Ship Agency
+                  Our Vission
                 </h3>
+                <h5 className="text-4xl font-bold font-abril text-white">
+                Smooth Sailling Ahead
+                </h5>
               </div>
               <p className="text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
@@ -95,8 +98,11 @@ const Aboutus = () => {
                   className="w-12 h-12 mr-4"
                 />
                 <h3 className="text-4xl font-bold font-abril text-white">
-                Maritime services
+                Our Mission
                 </h3>
+                <h5 className="text-4xl font-bold font-abril text-white">
+                Smooth Sailling Ahead
+                </h5>
               </div>
               <p className="text-white">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non

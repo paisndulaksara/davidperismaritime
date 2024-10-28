@@ -90,8 +90,8 @@ const Home = () => {
             ))}
           </div>
           <div className="w-full lg:w-1/2 text-left">
-            <h3 className="text-2xl font-bold font-abril mb-2 text-primary">Smooth Sailing Ahead</h3>
-            <h1 className="text-4xl font-bold font-abril mb-4 text-primary">About Us</h1>
+            <h3 className="text-2xl font-bold font-abril mb-2 text-primary">Your gateway to seamless operations</h3>
+            <h1 className="text-4xl font-bold font-abril mb-4 text-primary">Our Services</h1>
             <p className="mb-4 text-primary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Donec varius quam nec risus tincidunt, nec vulputate sapien auctor. Nulla facilisi. Aliquam erat volutpat. Vestibulum vulputate sagittis lectus, at viverra orci. Sed ac eros auctor, sagittis nunc et, faucibus sapien. Curabitur ultricies turpis eu urna malesuada ultricies. Nam et sapien ac nisl fringilla varius. Sed id risus quam. Ut efficitur odio et enim laoreet, nec facilisis sem pellentesque. Integer consequat sollicitudin arcu, vel pharetra sapien vehicula eu.
             </p>
@@ -112,8 +112,8 @@ const Home = () => {
         <div className="flex items-center">
           <div className="xl:container mx-auto px-4 flex">
             <div className="w-full lg:w-1/2 text-left">
-              <h3 className="text-2xl font-bold font-abril mb-2 text-grayDark">Smooth Sailing Ahead</h3>
-              <h1 className="text-6xl font-bold font-abril mb-4 text-blueLight">About Us</h1>
+              <h3 className="text-2xl font-bold font-abril mb-2 text-grayDark"> Sailing towards success</h3>
+              <h1 className="text-6xl font-bold font-abril mb-4 text-blueLight">Our Clients</h1>
               <p className="mb-4 text-grayDark">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Donec varius quam nec risus tincidunt, 
               </p>
