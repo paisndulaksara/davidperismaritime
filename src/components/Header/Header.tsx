@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
-
+import logo from "../../images/logo1.png"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,16 +14,15 @@ const Header = () => {
     <header className="sticky top-0 text-primary p-4 bg-blueLight bg-opacity-55 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <div className="text-2xl font-bold">DP Maritime</div>
+           <img src={logo} className='h-14' alt="" />
         </div>
-        <nav className="hidden md:flex flex-grow justify-center items-center space-x-4">
+        <nav className="hidden md:flex flex-grow justify-end items-center space-x-4 mr-3">
           <Link to="/" className="hover:text-blueDark">Home</Link>
+          <Link to="/about" className="hover:text-blueDark">About</Link>
           <Link to="/services" className="hover:text-blueDark">Services</Link>
-          <Link to="/blog" className="hover:text-blueDark">Blogs</Link>
-          <Link to="/resources" className="hover:text-blueDark">Resources</Link>
-          <Link to="/maritime" className="hover:text-blueDark">Careers</Link>
+          <Link to="/blog" className="hover:text-blueDark">News</Link> 
+          <Link to="/maritime" className="hover:text-blueDark">Careers</Link> 
           <Link to="/contact" className="hover:text-blueDark">Contact</Link>
-          <Link to="/technology" className="hover:text-blueDark">Technology</Link>
         </nav>
         <div className="hidden md:flex space-x-4">
           <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">

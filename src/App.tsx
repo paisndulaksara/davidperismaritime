@@ -10,6 +10,7 @@ import Resourses from './pages/Resourses/Resourses';
 import Blog from './pages/Blog/Blog';
 import Blogpost from './components/Blogpost/Blogpost';
 import Technology from './pages/Technology/Technology';
+import Aboutus from './pages/aboutus/Aboutus';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<OurService />} />
             <Route path="/maritime" element={<Maritime />} />
+            <Route path="/about" element={<Aboutus />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/resources" element={<Resourses />} />
             <Route path="/blog" element={<Blog />} />
