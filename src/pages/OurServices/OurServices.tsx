@@ -34,7 +34,7 @@ const Aboutus = () => {
         <div className="  flex items-center">
           <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight bg-opacity-40">
             <div className="xl:container py-16">
-              <div className="flex items-center mb-4">
+              <div className="  items-center mb-4">
                 <img
                   src={shipIcon}
                   alt="Ship Icon"
@@ -73,7 +73,7 @@ const Aboutus = () => {
           <div className="hidden lg:block lg:w-1/2"></div>
           <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight bg-opacity-40">
             <div className="xl:container py-16">
-              <div className="flex items-center mb-4">
+              <div className="  items-center mb-4">
                 <img
                   src={shipIcon}
                   alt="Ship Icon"
@@ -110,7 +110,7 @@ const Aboutus = () => {
         <div className="  flex items-center">
           <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight bg-opacity-40">
             <div className="xl:container py-16">
-              <div className="flex items-center mb-4">
+              <div className=" items-center mb-4">
                 <img
                   src={shipIcon}
                   alt="Ship Icon"
@@ -137,6 +137,45 @@ const Aboutus = () => {
             </div>
           </div>
           <div className="hidden lg:block lg:w-1/2"></div>
+        </div>
+      </section>
+
+       {/* Maritime services Section */}
+       <section
+        className="relative bg-cover bg-no-repeat bg-center "
+        style={{ backgroundImage: `url(${main})` }}
+      >
+        <div className="  flex items-center">
+          <div className="hidden lg:block lg:w-1/2"></div>
+          <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight bg-opacity-40">
+            <div className="xl:container py-16">
+              <div className="items-center mb-4">
+                <img
+                  src={shipIcon}
+                  alt="Ship Icon"
+                  className="w-13 h-12"
+                />
+                <h3 className="text-4xl font-bold font-abril text-white">
+                NVOCC
+                Operation
+                </h3>
+              </div>
+              <p className="text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                neque corporis, pariatur voluptates maxime debitis est commodi
+                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
+                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
+                assumenda, quisquam repellendus impedit ad magnam praesentium.
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                neque corporis, pariatur voluptates maxime debitis est commodi
+                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
+                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
+                assumenda, quisquam repellendus impedit ad magnam praesentium.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

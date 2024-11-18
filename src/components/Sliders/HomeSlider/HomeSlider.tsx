@@ -17,7 +17,7 @@ const HomeSlider = () => {
   };
 
   return (
-    <div className=" mx-auto -mt-20 overflow-hidden ">
+    <div className=" mx-auto -mt-24 overflow-hidden ">
       <Slider {...settings}>
       <div className="  relative">
           <img src={slide} alt="Slide 1" className="w-full h-auto" />

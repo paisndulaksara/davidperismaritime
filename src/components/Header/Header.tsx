@@ -11,12 +11,12 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 text-primary p-4 bg-blueLight bg-opacity-55 z-50">
+    <header className="sticky top-0 text-primary pb-4  bg-blueLight bg-opacity-55 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 pt-4">
            <img src={logo} className='h-14' alt="" />
         </div>
-        <nav className="hidden md:flex flex-grow justify-end items-center space-x-4 mr-3">
+        <nav className="hidden md:flex flex-grow justify-end items-center uppercase  space-x-12 mr-8">
           <Link to="/" className="hover:text-blueDark">Home</Link>
           <Link to="/about" className="hover:text-blueDark">About</Link>
           <Link to="/services" className="hover:text-blueDark">Services</Link>
