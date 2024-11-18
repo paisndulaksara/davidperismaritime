@@ -32,6 +32,7 @@ const Home = () => {
     { title: 'SHIPS AGENCY', image: anchor },
     { title: 'MARINE SERVICES', image: anchor },
     { title: 'LOGISTICS SERVICES', image: anchor },
+    { title: ' NVOCC OPERATION', image: anchor },
   ];
 
   return (
