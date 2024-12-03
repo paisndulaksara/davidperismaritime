@@ -11,6 +11,7 @@ import Blog from './pages/Blog/Blog';
 import Blogpost from './components/Blogpost/Blogpost';
 import Technology from './pages/Technology/Technology';
 import Aboutus from './pages/aboutus/Aboutus';
+import Careers from './pages/Careers/Careers';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Blogpost />} />
             <Route path="/technology" element={<Technology />} />
+            <Route path="/careeres" element={<Careers />} />
           </Routes>
         </main>
         <Footer />
