@@ -1,8 +1,34 @@
  
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import image from "../../images/info.jpg";
+import { fetchGeneralData } from "../../api/generalData";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
+
+  const [generalData, setGenaralData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const getGeneralData = async () => {
+      try {
+        const data = await fetchGeneralData();
+        setGenaralData(data.data); // Assuming the data is inside the "data" key
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch home page data");
+        setLoading(false);
+      }
+    };
+
+    getGeneralData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
+
   return (
     <>
       {/* Map Section */}
@@ -35,7 +61,7 @@ const Contact = () => {
                 <div className="flex items-center space-x-3">
                   <FaMapMarkerAlt className="text-blue-600" size={24} />
                   <p className="text-lg text-gray-700">
-                    123 Street, New York City, 43100, United States
+                  {generalData.address}
                   </p>
                 </div>
 
@@ -43,7 +69,9 @@ const Contact = () => {
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="text-blue-600" size={24} />
                   <p className="text-lg text-gray-700">
-                    <a href="mailto:info@example.com" className="hover:text-blue-600">info@example.com</a>
+                  <a href={`mailto:${generalData.email}`}>
+                {generalData.email}
+              </a>
                   </p>
                 </div>
 
@@ -51,20 +79,22 @@ const Contact = () => {
                 <div className="flex items-center space-x-3">
                   <FaPhone className="text-blue-600" size={24} />
                   <p className="text-lg text-gray-700">
-                    <a href="tel:0114700600" className="hover:text-blue-600">0114 700 600</a>
+                  <a href={`tel:${generalData.number}`}>
+                {generalData.number}
+              </a>
                   </p>
                 </div>
-              </div>
+              </div> 
 
               {/* Social Media Links */}
               <div className="flex space-x-4 mt-10">
-                <a href="#" className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
+                <a href={generalData.fb_link} className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
                   <FaFacebookF size={20} />
                 </a>
-                <a href="#" className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
+                <a href={generalData.linked_in_link} className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
                   <FaLinkedinIn size={20} />
                 </a>
-                <a href="#" className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
+                <a href={generalData.youtube_link} className="hover:text-blue-800 border-2 border-blue-600 text-blue-600 rounded-full p-2 transition hover:bg-blue-600 hover:text-white">
                   <FaYoutube size={20} />
                 </a>
               </div>

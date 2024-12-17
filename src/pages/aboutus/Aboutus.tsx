@@ -1,160 +1,130 @@
- 
-import image from '../../images/image.png';
-import agencyBg from "../../images/agency.jpg";
-import shipIcon from "../../images/ship.png";
-import main from "../../images/main.png";
-import person01 from "../../images/person-01.jpg";
-import person02 from "../../images/person-02.jpg";
-import person03 from "../../images/person-03.jpg";
-import person04 from "../../images/person-04.jpg";
+import { fetchAboutPageData } from "../../api/about";
+import { useEffect, useState } from "react";
+import image from "../../images/image.png"; 
+import shipIcon from "../../images/ship.png"; 
+import TeamSlide from "../../components/Sliders/Teamslider/TeamSlide";
 
 const Aboutus = () => {
+  const [aboutData, setAboutData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const IMAGE_BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL;
+
+  useEffect(() => {
+    const getAboutData = async () => {
+      try {
+        const data = await fetchAboutPageData();
+        setAboutData(data.data); // Assuming the data is inside the "data" key
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch about page data");
+        setLoading(false);
+      }
+    };
+
+    getAboutData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <>
-    <div className="xl:container mx-auto p-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        {/* Left side with text */}
-        <div>
-          <h2 className="text-5xl font-bold text-blueLight mb-4 font-abril">DP Maritime Agencies</h2>
-          <p className="text-grayDark text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non neque
-            corporis, pariatur voluptates maxime debitis est commodi magnam minima
-            deserunt quae, ratione officia fugiat, ipsa unde obcaecati cum.
-            Perspiciatis, fugit quo. Dolore voluptas assumenda, quisquam
-            repellendus impedit ad magnam praesentium.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non neque
-            corporis, pariatur voluptates maxime debitis est commodi magnam minima
-            deserunt quae, ratione officia fugiat, ipsa unde obcaecati cum.
-            Perspiciatis, fugit quo. Dolore voluptas assumenda, quisquam
-            repellendus impedit ad magnam praesentium.
-          </p>
+      <div className="xl:container mx-auto p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left side with text */}
+          <div>
+            <h2 className="text-5xl font-bold text-blueLight mb-4 font-abril">
+              {aboutData.title}
+            </h2>
+            <p
+              className="text-grayDark text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: aboutData.description }}
+            />
+          </div>
+
+          {/* Right side with image */}
+          <div>
+            <img
+              src={image}
+              alt="Maritime"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+  {/* Ship Agency Section */}
+  <section className="relative bg-cover bg-no-repeat bg-center ">
+    <div className="flex flex-col lg:flex-row items-stretch">
+      {/* Left Column - Text */}
+      <div className="w-full lg:w-1/2 p-8 bg-blueLight flex items-center">
+        <div className="w-full container">
+          <div className="flex items-center mb-4 container">
+            <img src={shipIcon} alt="Ship Icon" className="w-12 h-12 mr-4" />
+            <h3 className="text-4xl font-bold font-abril text-white">
+              {aboutData.vision_title}
+            </h3>
+          </div>
+        <div className="container">
+        <p className="text-white">{aboutData.vision_description}</p>
+        </div>
+        </div>
+      </div>
+
+      {/* Right Column - Image */}
+      <div className="w-full lg:w-1/2 h-64 lg:h-auto">
+        <img
+          src={`${IMAGE_BASE_URL}${aboutData.vision_image}`}
+          alt="Vision"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* Maritime services Section */}
+  <section className="relative bg-cover bg-no-repeat bg-center">
+  <div className="flex flex-col-reverse lg:flex-row items-stretch">
+    
+    {/* Image Column */}
+    <div className="w-full lg:w-1/2 h-64 lg:h-auto order-1 lg:order-none">
+      <img
+        src={`${IMAGE_BASE_URL}${aboutData.mission_image}`}
+        alt="Mission"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Text Column */}
+    <div className="w-full lg:w-1/2 p-8 bg-blueLight flex items-center order-2 lg:order-none">
+      <div className="w-full container">
+        <div className="flex items-center mb-4 container">
+          <img src={shipIcon} alt="Ship Icon" className="w-12 h-12 mr-4" />
+          <h3 className="text-4xl font-bold font-abril text-white">
+            {aboutData.mission_title}
+          </h3>
+        </div>
+        <div className="container"><p className="text-white">{aboutData.mission_description}</p>
         </div>
         
-        {/* Right side with image */}
-        <div>
-          <img src={image} alt="Maritime" className="w-full h-auto rounded-lg shadow-lg" />
-        </div>
       </div>
     </div>
 
-     <div>
-         {/* Ship Agency Section */}
-      <section
-        className="relative bg-cover bg-no-repeat bg-center "
-        style={{ backgroundImage: `url(${agencyBg})` }}
-      >
-        <div className="  flex items-center">
-          <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight ">
-            <div className="xl:container py-16">
-              <div className="flex items-center mb-4">
-                <img
-                  src={shipIcon}
-                  alt="Ship Icon"
-                  className="w-12 h-12 mr-4"
-                />
-                <h3 className="text-4xl font-bold font-abril text-white">
-                  Our Vission
-                </h3>
-                <h5 className="text-4xl font-bold font-abril text-white">
-                Smooth Sailling Ahead
-                </h5>
-              </div>
-              <p className="text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                neque corporis, pariatur voluptates maxime debitis est commodi
-                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
-                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
-                assumenda, quisquam repellendus impedit ad magnam praesentium.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                neque corporis, pariatur voluptates maxime debitis est commodi
-                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
-                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
-                assumenda, quisquam repellendus impedit ad magnam praesentium.
-              </p>
-            </div>
-          </div>
-          <div className="hidden lg:block lg:w-1/2"></div>
-        </div>
-      </section>
+  </div>
+</section>
 
-      {/* Maritime services Section */}
-      <section
-        className=" relative bg-cover bg-no-repeat bg-center "
-        style={{ backgroundImage: `url(${main})` }}
-      >
-        <div className="  flex items-center">
-          <div className="hidden lg:block lg:w-1/2"></div>
-          
-          <div className="w-full lg:w-1/2 text-left p-4 bg-blueLight ">
-            <div className="xl:container py-16">
-              <div className="flex items-center mb-4">
-                <img
-                  src={shipIcon}
-                  alt="Ship Icon"
-                  className="w-12 h-12 mr-4"
-                />
-                <h3 className="text-4xl font-bold font-abril text-white">
-                Our Mission
-                </h3>
-                <h5 className="text-4xl font-bold font-abril text-white">
-                Smooth Sailling Ahead
-                </h5>
-              </div>
-              <p className="text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                neque corporis, pariatur voluptates maxime debitis est commodi
-                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
-                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
-                assumenda, quisquam repellendus impedit ad magnam praesentium.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                neque corporis, pariatur voluptates maxime debitis est commodi
-                magnam minima deserunt quae, ratione officia fugiat, ipsa unde
-                obcaecati cum. Perspiciatis, fugit quo. Dolore voluptas
-                assumenda, quisquam repellendus impedit ad magnam praesentium.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-     </div>
+</div>
 
-       {/* Our Team Section */}
-       <div className="text-center my-8">
+
+      {/* Our Team Section */}
+      <div className="text-center my-8">
         <h2 className="text-5xl font-bold text-blueLight mb-16">Our Team</h2>
-        <div className="xl:container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Team Member 1 */}
-          <div className="text-center">
-            <img src={person01} alt="Team Member 1" className="w-full h-auto rounded-lg mb-4" />
-            <h3 className="text-2xl font-abril text-darkBlue">John Doe</h3>
-            <p className="text-lg font-abril text-darkBlue">Position</p>
-          </div>
-          {/* Team Member 2 */}
-          <div className="text-center">
-            <img src={person02} alt="Team Member 2" className="w-full h-auto rounded-lg mb-4" />
-            <h3 className="text-2xl font-abril text-darkBlue">Jane Smith</h3>
-            <p className="text-lg font-abril text-darkBlue">Position</p>
-          </div>
-          {/* Team Member 3 */}
-          <div className="text-center">
-            <img src={person03} alt="Team Member 3" className="w-full h-auto rounded-lg mb-4" />
-            <h3 className="text-2xl font-abril text-darkBlue">Alice Johnson</h3>
-            <p className="text-lg font-abril text-darkBlue">Position</p>
-          </div>
-          {/* Team Member 4 */}
-          <div className="text-center">
-            <img src={person04} alt="Team Member 4" className="w-full h-auto rounded-lg mb-4" />
-            <h3 className="text-2xl font-abril text-darkBlue">Bob Brown</h3>
-            <p className="text-lg font-abril text-darkBlue">Position</p>
-          </div>
-        </div>
+        <TeamSlide />
       </div>
-  </>
+    </>
   );
 };
 
