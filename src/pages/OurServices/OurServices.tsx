@@ -56,7 +56,7 @@ const OurServices = () => {
 
   return (
     <div>
-      <section className="container p-8">
+      <section className="xl:container p-8">
         <h2 className="text-center font-abril text-5xl text-blueLight pb-5">
           {title}
         </h2>

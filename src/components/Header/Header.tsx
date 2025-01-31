@@ -12,8 +12,8 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 xl:container text-primary pb-4 bg-blueLight bg-opacity-55 z-50">
-      <div className="container mx-auto flex justify-between items-center px-4">
+    <header className="sticky top-0   text-primary pb-4 bg-blueLight bg-opacity-55 z-50">
+      <div className="xl:container mx-auto flex justify-between items-center px-4">
         
         {/* Logo Section */}
         <div className="flex items-center space-x-4 pt-4">

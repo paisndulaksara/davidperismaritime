@@ -84,7 +84,7 @@ const Blog = () => {
 
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="xl:container mx-auto px-4">
         {/* Controls (Category Dropdown & Search Box) */}
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           {/* Category Dropdown */}

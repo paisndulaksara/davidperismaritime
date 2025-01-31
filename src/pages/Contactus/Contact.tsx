@@ -50,7 +50,7 @@ const Contact = () => {
 
       {/* Contact Info and Business Hours Section */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="xl:container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center md:items-start">
             
             {/* Left side - Contact Information */}
@@ -124,7 +124,7 @@ const Contact = () => {
 
        {/* Form Section */}
        <section className="py-12 bg-gray-100">
-  <div className="container mx-auto px-4">
+  <div className="xl:container mx-auto px-4">
     <div className="flex flex-col md:flex-row justify-center">
       
       {/* Left side - Info Section */}
