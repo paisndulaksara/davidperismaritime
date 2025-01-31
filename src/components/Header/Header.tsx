@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 text-primary pb-4 bg-blueLight bg-opacity-55 z-50">
+    <header className="sticky top-0 xl:container text-primary pb-4 bg-blueLight bg-opacity-55 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
         
         {/* Logo Section */}
@@ -32,7 +32,7 @@ const Header = () => {
 
         {/* Desktop Social Icons */}
         <div className="hidden lg:flex space-x-4">
-          <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">
+          {/* <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">
             <FaFacebookF size={20} />
           </a>
           <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">
@@ -40,7 +40,7 @@ const Header = () => {
           </a>
           <a href="#" className="hover:text-blueDark border-2 border-primary rounded-full p-2">
             <FaYoutube size={20} />
-          </a>
+          </a> */}
         </div>
 
         {/* Hamburger Menu (for mobile & tablet) */}

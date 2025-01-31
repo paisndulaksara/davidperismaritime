@@ -1,7 +1,7 @@
  
 const PrivacyPolicy = () => {
   return (
-    <div className="container mx-auto p-6 text-gray-800">
+    <div className="xl:container mx-auto p-6 text-gray-800">
       <h1 className="text-3xl font-bold text-blueDark mb-4">
         Privacy Policy of D P Maritime Agencies (Private) Limited
       </h1>
