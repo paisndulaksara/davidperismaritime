@@ -1,7 +1,7 @@
 import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaYoutube,
+  // FaFacebookF,
+  // FaLinkedinIn,
+  // FaYoutube,
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhone,
@@ -9,6 +9,7 @@ import {
 
 import { fetchGeneralData } from "../../api/generalData";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [generalData, setGenaralData] = useState<any>(null);
@@ -63,7 +64,7 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex space-x-4 mt-4 sm:mt-0 w-full sm:w-auto">
-          <a
+          {/* <a
              href={generalData.fb_link}
             className="hover:text-blue-500 border-2 border-primary rounded-full p-2"
           >
@@ -80,7 +81,8 @@ const Footer = () => {
             className="hover:text-blue-500 border-2 border-primary rounded-full p-2"
           >
             <FaYoutube size={20} />
-          </a>
+          </a> */}
+            <Link to="/privacy-policy" className="hover:text-blueDark">Privacy Policy</Link>
         </div>
       </div>
     </footer>

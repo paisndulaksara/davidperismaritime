@@ -1,7 +1,6 @@
 import { fetchAboutPageData } from "../../api/about";
 import { useEffect, useState } from "react";
-import image from "../../images/image.png"; 
-import shipIcon from "../../images/ship.png"; 
+import image from "../../images/image.png";  
 import TeamSlide from "../../components/Sliders/Teamslider/TeamSlide";
 
 const Aboutus = () => {
@@ -63,7 +62,7 @@ const Aboutus = () => {
       <div className="w-full lg:w-1/2 p-8 bg-blueLight flex items-center">
         <div className="w-full container">
           <div className="flex items-center mb-4 container">
-            <img src={shipIcon} alt="Ship Icon" className="w-12 h-12 mr-4" />
+            <img src={`${IMAGE_BASE_URL}${aboutData.vision_icon}`} alt="Ship Icon" className="w-12 h-12 mr-4" />
             <h3 className="text-4xl font-bold font-abril text-white">
               {aboutData.vision_title}
             </h3>
@@ -102,7 +101,7 @@ const Aboutus = () => {
     <div className="w-full lg:w-1/2 p-8 bg-blueLight flex items-center order-2 lg:order-none">
       <div className="w-full container">
         <div className="flex items-center mb-4 container">
-          <img src={shipIcon} alt="Ship Icon" className="w-12 h-12 mr-4" />
+          <img src={`${IMAGE_BASE_URL}${aboutData.mission_icon}`} alt="Ship Icon" className="w-12 h-12 mr-4" />
           <h3 className="text-4xl font-bold font-abril text-white">
             {aboutData.mission_title}
           </h3>

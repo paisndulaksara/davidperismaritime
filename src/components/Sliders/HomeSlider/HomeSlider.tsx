@@ -47,12 +47,12 @@ const HomeSlider: React.FC = () => {
 
   // Slick slider settings (with proper TypeScript type)
   const settings: Settings = {
-    dots: true,
+    dots:true, 
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    
     autoplaySpeed: 3000,
   };
 
@@ -70,7 +70,7 @@ const HomeSlider: React.FC = () => {
               className="w-full h-auto"
             />
             <div className="xl:container absolute left-0 top-1/2 transform -translate-y-1/2 p-6">
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold font-abril text-primary">
+              <h3 className="text-3xl sm:text-4xl md:text-7xl font-bold tracking-wider font-abril text-primary">
                 {slide.slider_text}
               </h3>
 

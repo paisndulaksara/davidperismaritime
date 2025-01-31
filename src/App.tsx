@@ -12,6 +12,7 @@ import Blogpost from './components/Blogpost/Blogpost';
 import Technology from './pages/Technology/Technology';
 import Aboutus from './pages/aboutus/Aboutus';
 import Careers from './pages/Careers/Careers';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/blog/:id/:slug" element={<Blogpost />} />
             <Route path="/technology" element={<Technology />} />
             <Route path="/careeres" element={<Careers />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />

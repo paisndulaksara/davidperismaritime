@@ -131,3 +131,37 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+
+/* Ensure dots are positioned inside the image at the bottom */
+.slick-dots {
+  position: absolute;
+  bottom: 15px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style each dot */
+.slick-dots li {
+  display: inline-block;
+}
+
+/* Customize the dot color */
+.slick-dots li button:before {
+  font-size: 10px;
+  color: white !important; /* Change dot color to white */
+  opacity: 0.75; /* Slight transparency */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Active dot styling */
+.slick-dots li.slick-active button:before {
+  opacity: 1; /* Fully visible */
+  color: white !important;
+}

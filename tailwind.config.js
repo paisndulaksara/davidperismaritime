@@ -15,8 +15,8 @@ export default {
         grayDark: '#2b3237',
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-        abril: ['Abril Fatface', 'serif'],
+        sans: ['Domine', 'serif'],
+        abril: ['Abril Fatface', 'serif'], 
       },
       container: {
         center: true,
