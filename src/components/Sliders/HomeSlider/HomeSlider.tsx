@@ -70,9 +70,9 @@ const HomeSlider: React.FC = () => {
               className="w-full h-auto"
             />
             <div className="xl:container absolute left-0 top-1/2 transform -translate-y-1/2 p-6">
-              <h3 className="text-3xl sm:text-4xl md:text-7xl font-bold tracking-wider font-abril text-primary">
-                {slide.slider_text}
-              </h3>
+              <h3 className="text-3xl sm:text-4xl md:text-7xl font-bold tracking-wider font-abril text-primary"
+              dangerouslySetInnerHTML={{ __html: slide.slider_text }}
+             />
 
               <div
                 className="text-xl sm:text-2xl md:text-3xl font-bold font-abril text-primary pt-2"
